@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputText" placeholder="Enter your text here">
+    <br><br>
+    <button id="btn">Save to Local Storage</button>
+    <p>Nothing Saved</p>
+    <script>
+        const inputText = document.querySelector('#inputText');
+        const btn = document.querySelector('#btn');
+        var para = document.querySelector('p');
+
+        btn.addEventListener('click', ()=>{
+            var a = inputText.value;
+            localStorage.setItem('input',a);
+            para.textContent = `Saved Text: ${inputText.value}`;
+        });
+    </script>
+</body>
+</html>
